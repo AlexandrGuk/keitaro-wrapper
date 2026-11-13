@@ -13,8 +13,14 @@ fi
 
 if [ ! -f .env ]; then
   cp .env.example .env
-  echo "Created backend/.env from .env.example — fill KEITARO_BASE_URL, KEITARO_API_KEY, APP_PASSWORD, SESSION_SECRET"
+  echo "Created backend/.env"
 fi
 
 .venv/bin/python -m alembic upgrade head
-echo "Install done. Run: ./scripts/start.sh"
+
+echo
+echo "Install done."
+echo "Login: guk / keitaro  (see APP_USERNAME / APP_PASSWORD in backend/.env)"
+echo "Fill KEITARO_BASE_URL and KEITARO_API_KEY in backend/.env, then:"
+echo "  ./scripts/start.sh"
+echo "Open http://127.0.0.1:8000"
