@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="robots" content="noindex, nofollow">
+    <title>Вход — обёртка Keitaro</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500&family=JetBrains+Mono:wght@400;500&family=Press+Start+2P&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="static/css/app.css?v=4">
+</head>
+<body>
+    <nav class="nav">
+        <a class="nav-home" href="login">Keitaro</a>
+    </nav>
+    <main class="page">
+        <h1 class="page-title">Обёртка Keitaro</h1>
+        <section class="window">
+            <div class="service-copy">
+                <p>Внутренний инструмент для тестовых кампаний в трекере Keitaro. Кампания собирается здесь, а не руками в админке.</p>
+                <ul>
+                    <li>Создаватор берёт название, страну, оффер, домен, группу и источник. В трекере имя начинается с <code>test_guk_</code>.</li>
+                    <li>Первый поток забирает визиты из выбранной страны и отправляет их на Google. Второй отправляет остальных на выбранный оффер.</li>
+                    <li>Редактор добавляет и убирает офферы, закрепляет долю и публикует состав в Keitaro. Сумма долей активных офферов — 100%.</li>
+                </ul>
+            </div>
+            <form class="form-grid login-form" id="login-form">
+                <div class="field">
+                    <label for="username">Логин</label>
+                    <input id="username" name="username" autocomplete="username" required>
+                </div>
+                <div class="field">
+                    <label for="password">Пароль</label>
+                    <input id="password" name="password" type="password" autocomplete="current-password" required>
+                </div>
+                <div class="actions">
+                    <button class="btn btn-primary" type="submit">Войти</button>
+                </div>
+            </form>
+        </section>
+        <p class="form-error" id="error" hidden></p>
+    </main>
+    <script src="static/js/api.js"></script>
+    <script src="static/js/login.js"></script>
+</body>
+</html>

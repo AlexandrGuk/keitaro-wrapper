@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="robots" content="noindex, nofollow">
+    <title>Новая кампания</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500&family=JetBrains+Mono:wght@400;500&family=Press+Start+2P&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="static/css/app.css?v=9">
+</head>
+<body>
+    <nav class="nav">
+        <div class="nav-links">
+            <a class="nav-create is-active" href="./">Создать</a>
+            <a href="campaigns">Кампании</a>
+        </div>
+        <a href="login" id="logout">Выйти</a>
+    </nav>
+    <main class="page">
+        <h1 class="page-title">Новая кампания</h1>
+        <p class="lead">В Keitaro уйдёт <code id="final-name">test_guk_</code></p>
+        <p class="lead">Поток 1 заберёт страны из поля «Гео» и отправит их на Google. Поток 2 отправит всех остальных на выбранный оффер.</p>
+        <div class="window skeleton" id="form-skeleton" aria-hidden="true">
+            <div class="skeleton-line short"></div>
+            <div class="skeleton-block"></div>
+            <div class="skeleton-line short"></div>
+            <div class="skeleton-block"></div>
+            <div class="skeleton-line short"></div>
+            <div class="skeleton-block"></div>
+            <div class="skeleton-line short"></div>
+            <div class="skeleton-block"></div>
+            <div class="skeleton-line short"></div>
+            <div class="skeleton-block"></div>
+            <div class="skeleton-line short"></div>
+            <div class="skeleton-block"></div>
+        </div>
+        <form class="window" id="create-form" hidden>
+            <div class="form-grid">
+                <div class="field">
+                    <label for="name">Название <span class="field-mark">обязательное</span></label>
+                    <input id="name" name="name" required autocomplete="off" placeholder="campaign1">
+                </div>
+                <div class="field">
+                    <label for="geo">Гео <span class="field-mark">обязательное</span></label>
+                    <input id="geo" name="geo" required autocapitalize="characters" placeholder="MX,AU,RO">
+                </div>
+                <div class="field suggest">
+                    <label for="offer">Оффер <span class="field-mark">обязательное</span></label>
+                    <input id="offer" type="text" autocomplete="off" placeholder="имя или id">
+                    <ul class="suggest-list" id="offer-list" hidden></ul>
+                </div>
+                <div class="field">
+                    <label for="domain">Домен <span class="field-mark">необязательное</span></label>
+                    <select id="domain"></select>
+                </div>
+                <div class="field">
+                    <label for="group">Группа <span class="field-mark">обязательное</span></label>
+                    <select id="group" required></select>
+                </div>
+                <div class="field">
+                    <label for="source">Источник <span class="field-mark">необязательное</span></label>
+                    <select id="source"></select>
+                </div>
+            </div>
+            <div class="actions">
+                <button class="btn btn-primary" type="submit">Создать</button>
+            </div>
+        </form>
+        <p class="form-error" id="error" hidden></p>
+    </main>
+    <script src="static/js/api.js"></script>
+    <script src="static/js/create.js"></script>
+</body>
+</html>

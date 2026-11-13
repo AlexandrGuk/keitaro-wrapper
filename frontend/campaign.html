@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="robots" content="noindex, nofollow">
+    <title>Потоки</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500&family=JetBrains+Mono:wght@400;500&family=Press+Start+2P&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="static/css/app.css?v=9">
+</head>
+<body>
+    <nav class="nav">
+        <div class="nav-links">
+            <a class="nav-create" href="./">Создать</a>
+            <a class="is-active" href="campaigns">Кампании</a>
+        </div>
+        <a href="login" id="logout">Выйти</a>
+    </nav>
+    <main class="page">
+        <div class="toolbar">
+            <div>
+                <a class="back-link" href="campaigns">Назад к кампаниям</a>
+                <h1 class="page-title" id="title">Потоки</h1>
+            </div>
+            <div class="actions">
+                <button class="btn" id="fetch" type="button">Забрать из Keitaro</button>
+                <a class="btn" id="kt-link" href="#" target="_blank" rel="noopener">Открыть в Keitaro</a>
+                <button class="btn btn-danger" id="delete-campaign" type="button">Удалить кампанию</button>
+            </div>
+        </div>
+        <p class="form-error" id="error" hidden></p>
+        <div class="stack" id="skeleton" aria-hidden="true">
+            <section class="window skeleton">
+                <div class="skeleton-line medium"></div>
+                <div class="skeleton-block"></div>
+                <div class="skeleton-block"></div>
+            </section>
+            <section class="window skeleton">
+                <div class="skeleton-line medium"></div>
+                <div class="skeleton-block"></div>
+                <div class="skeleton-block"></div>
+            </section>
+        </div>
+        <div class="stack" id="streams" hidden></div>
+        <section class="window service-copy">
+            <h2 class="window-title">Справка</h2>
+            <p>Верхний поток забирает указанные страны и уводит их на Google. Нижний отправляет всех остальных на офферы.</p>
+            <p>Жёлтая рамка значит, что правка ещё только здесь. «Опубликовать» записывает её в Keitaro. «Отменить» возвращает карточку к последнему опубликованному виду.</p>
+            <p>«Закрепить» замораживает процент строки. Остальные делят то, что осталось до 100. Если закрепить 100% у единственного оффера, весь трафик идёт ему. Добавить второй нельзя, пока не нажмёте «Открепить» или не уменьшите эту долю.</p>
+            <p>«Удалить кампанию» убирает её в архив Keitaro и из этого списка.</p>
+        </section>
+    </main>
+    <script src="static/js/api.js"></script>
+    <script src="static/js/editor.js?v=2"></script>
+</body>
+</html>

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="robots" content="noindex, nofollow">
+    <title>Кампании</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500&family=JetBrains+Mono:wght@400;500&family=Press+Start+2P&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="static/css/app.css?v=4">
+</head>
+<body>
+    <nav class="nav">
+        <div class="nav-links">
+            <a class="nav-create" href="./">Создать</a>
+            <a class="is-active" href="campaigns">Кампании</a>
+        </div>
+        <a href="login" id="logout">Выйти</a>
+    </nav>
+    <main class="page">
+        <h1 class="page-title">Кампании</h1>
+        <p class="lead">Только имена с тестовым префиксом.</p>
+        <section class="window">
+            <div class="skeleton" id="skeleton" aria-hidden="true">
+                <div class="skeleton-block"></div>
+                <div class="skeleton-block"></div>
+                <div class="skeleton-block"></div>
+                <div class="skeleton-block"></div>
+            </div>
+            <ul class="campaign-list" id="list" hidden></ul>
+            <p class="muted" id="empty" hidden>Кампаний нет</p>
+        </section>
+        <p class="form-error" id="error" hidden></p>
+    </main>
+    <script src="static/js/api.js"></script>
+    <script src="static/js/campaigns.js"></script>
+</body>
+</html>
